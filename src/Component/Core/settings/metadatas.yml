@@ -1,0 +1,8 @@
+metadatas:
+    agent:
+        name: agent
+        class: Eki\NRW\Component\Netqworking\Agent\Agent
+        cache:
+        prefix: ~
+        tag_prefix: ~
+		

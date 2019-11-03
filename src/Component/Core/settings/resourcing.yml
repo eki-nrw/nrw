@@ -1,0 +1,7 @@
+parameters:
+    eki_nrw.resourcing.resource.tool.class: Eki\NRW\Component\Core\Resourcing\Resource\Tool
+
+services:
+    eki_nrw.resourcing.resource.tool:
+        class: %eki_nrw.resourcing.resource.tool.class%
+        

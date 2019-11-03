@@ -1,0 +1,20 @@
+parameters:
+    doctrine_dsn: sqlite://:memory:
+    anonymous_user_id: 10
+    kernel.debug: false
+    languages: []
+    eki_nrw.contextaccess.list: [test]
+
+services:
+    eki_nrw.base.persistence_handler:
+        #To disable cache, switch alias to eki_nrp.base.storage_engine
+        alias: eki_nrw.spi.persistence.cache
+
+    eki_nrw.base.storage_engine:
+        alias: eki_nrw.spbase.persistence.doctrine
+
+    eki_nrw.spbase.search:
+        alias: eki_nrw.spbase.search_engine
+
+    eki_nrw.spbase.search_engine:
+        alias: eki_nrw.spbase.search.doctrine

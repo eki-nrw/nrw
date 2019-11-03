@@ -1,0 +1,74 @@
+parameters:
+    eki_nrw.base.role.policy_map:
+        agent:
+            read: { Owner: true, Tag: true, Facet: true }
+            create: ~
+            edit: { Owner: true, Tag: true, Facet: true }
+            remove: { Owner: true }
+
+        resource:
+            read: { Owner: true, Tag: true, Facet: true }
+            create: ~
+            edit: { Owner: true, Tag: true, Facet: true }
+            remove: { Owner: true }
+
+        resource_type:
+            read: ~
+            create: ~
+            edit: { Owner: true }
+            remove: { Owner: true }
+            
+        role:
+            assign: ~
+            update: ~
+            create: ~
+            delete: ~
+            read: ~
+
+        setup:
+            administrate: ~
+            install: ~
+            setup: ~
+            system_info: ~
+
+        user:
+            login: { SiteAccess: true }
+            password: ~
+            preferences: ~
+            register: ~
+            selfedit: ~
+            activation: ~
+
+    eki_nrw.engine.settings:
+        working:
+            subject:
+                subjectDirectorClass: Eki\NRW\Mdl\Working\Subject\Director
+                subjectBuilderClass: Eki\NRW\Mdl\Working\Subject\BaseObjectBuilder
+                subject_types:
+                    plan: 
+                        subject: Eki\NRW\Component\Working\Plan\Plan
+                        callback:
+                        importor:
+                        validator:
+                        factory:
+                    plan.execute: 
+                        subject: Eki\NRW\Component\Working\Plan\ExecutePlan
+                        callback:
+                        importor:
+                        validator:
+                        factory:
+            working_subject:
+                actionHandlerClass: Eki\NRW\Component\Core\Working\WorkingSubject\ActionHandler
+                working_types:
+                    - working.def
+                working.def:
+                    continuation:
+                        advance:
+                            plan.execute.process: activity.process.output
+                            plan.execute.exchange: activity.exchange.output
+                            planitem.execute.process: activity.process.input
+                            planitem.execute.exchange: activity.exchange.input
+                            activity.process.output: execution.rea.output
+                            activity.process.input: execution.rea.input
+                            activity.exchange.receive: execution.rea.receive
+                            activity.exchange.provide: execution.rea.provide

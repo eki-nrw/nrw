@@ -1,0 +1,12 @@
+parameters:
+    eki_nrw.contextaccess.class: Eki\NRW\Mdl\Contexture\ContextAccess\ContextAccess
+    eki_nrw.contextaccess.default.name: default
+    eki_nrw.config.resolver.dynamic.class: Eki\NRW\Mdl\Contexture\Configuration\ConfigResolver\ContextAccess\ConfigResolver
+    eki_nrw.config.resolver.chain.class: Eki\NRW\Mdl\Contexture\Configuration\ChainConfigResolver 
+
+services:
+    eki_nrw.config.resolver.chain:
+        class: "%eki_nrw.config.resolver.chain.class%"     
+    
+    eki_nrw.config.resolver:
+        alias: eki_nrw.config.resolver.chain

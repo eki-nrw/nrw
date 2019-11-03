@@ -1,0 +1,40 @@
+parameters:
+    eki_nrw.base.role.policy_map:
+        agent:
+            read: { Owner: true, Tag: true, Facet: true }
+            create: ~
+            edit: { Owner: true, Tag: true, Facet: true }
+            remove: { Owner: true }
+
+        resource:
+            read: { Owner: true, Tag: true, Facet: true }
+            create: ~
+            edit: { Owner: true, Tag: true, Facet: true }
+            remove: { Owner: true }
+
+        resource_type:
+            read: ~
+            create: ~
+            edit: { Owner: true }
+            remove: { Owner: true }
+            
+        role:
+            assign: ~
+            update: ~
+            create: ~
+            delete: ~
+            read: ~
+
+        setup:
+            administrate: ~
+            install: ~
+            setup: ~
+            system_info: ~
+
+        user:
+            login: { SiteAccess: true }
+            password: ~
+            preferences: ~
+            register: ~
+            selfedit: ~
+            activation: ~

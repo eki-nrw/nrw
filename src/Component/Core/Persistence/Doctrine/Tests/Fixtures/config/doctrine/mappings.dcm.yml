@@ -1,0 +1,5 @@
+Eki\NRW\Component\Networking\Agent\Agent:
+    storageName: agents
+    id:
+        - id:
+        

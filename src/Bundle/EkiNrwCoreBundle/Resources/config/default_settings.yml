@@ -1,0 +1,5 @@
+parameters:
+
+    # Security settings
+    ekisettings.default.security.login_template: "EkiNrwCoreBundle:Security:login.html.twig"
+    ekisettings.default.security.base_layout: "%ekisettings.default.pagelayout%" 

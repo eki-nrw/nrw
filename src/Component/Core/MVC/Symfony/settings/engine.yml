@@ -1,0 +1,19 @@
+services:
+    # Base Aliases
+    eki_nrw.base.engine:
+        alias: eki_nrw.signalslot.repository
+
+    eki_nrw.base.service.role:
+        alias: eki_nrw.signalslot.service.role
+
+    eki_nrw.base.service.user:
+        alias: eki_nrw.signalslot.service.user
+
+    eki_nrw.base.service.search:
+        alias: eki_nrw.signalslot.service.search
+
+    eki_nrw.base.service.trash:
+        alias: eki_nrw.signalslot.service.trash
+
+    eki_nrw.base.service.locating:
+        alias: eki_nrw.signalslot.service.locating

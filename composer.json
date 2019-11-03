@@ -1,0 +1,33 @@
+{
+    "name": "eki-nrw/nrw",
+    "type": "library",
+    "description": "Model Libraries for Ekipower NRW Project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nguyen Tien Hy",
+            "email": "ngtienhy@gmail.com"
+        },
+    ],
+    "require": {
+        "php": "~5.6|~7.0"
+	},
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "eki-nrw/common": "~0.1",
+        "eki-nrw/mdl": "~0.1",
+    },
+    "replace": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Eki\\NRW\\": "src/",
+        },
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }    
+}

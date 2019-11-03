@@ -1,0 +1,9 @@
+boundary: user
+scopes:
+    owns:
+        individual:
+        team:
+        organization:
+    top:
+flows:
+uses:

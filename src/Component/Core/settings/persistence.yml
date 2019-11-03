@@ -1,0 +1,77 @@
+parameters:
+    eki_nrw.persistence.metadata.class: Eki\NRW\Common\Res\Metadata\Metadata
+    eki_nrw.persistence.registry.class: Eki\NRW\Common\Res\Metadata\Registry
+    eki_nrw.persistence.metadatas:
+        <alias>:
+            classes:
+                -
+                -
+            <param1>: <paramValue1>
+            <param2>: <paramValue2>
+            
+        agent_type:
+            classes: 
+                individual: Eki\NRW\Component\Networking\Agent\Type\IndividualAgentType
+                organzation: Eki\NRW\Component\Networking\Agent\Type\OrganizationAgentType
+                network: Eki\NRW\Component\Networking\Agent\Type\NetworkAgentType
+                project: Eki\NRW\Component\Networking\Agent\Type\ProjectAgentType
+                team: Eki\NRW\Component\Networking\Agent\Type\TeamAgentType
+                collaboration: Eki\NRW\Component\Networking\Agent\Type\CollaborationAgentType
+        agent:
+            classes: 
+                default: Eki\NRW\Component\Networking\Agent\Agent
+        resource_type:
+            classes:
+                default: Eki\NRW\Component\Resourcing\Resource\Type\ResourceType
+        resource:
+            classes:
+                default: Eki\NRW\Component\Resourcing\Resource\Resource
+        event_type:
+            classes:
+                event.input: Eki\NRW\Component\Processing\Event\Type\InputEventType
+                event.output: Eki\NRW\Component\Processing\Event\Type\OutputEventType
+                event.provide: Eki\NRW\Component\Processing\Event\Type\ProvideEventType
+                event.receive: Eki\NRW\Component\Processing\Event\Type\ReceiveEventType
+        event:
+            classes:
+                default: Eki\NRW\Component\Processing\Event\Event
+        pass:
+            classes:
+                default: Eki\NRW\Component\Processing\Pass\Pass
+        process:
+            classes:
+                default: Eki\NRW\Component\Processing\Process\Process
+                working.def.activity: Eki\NRW\Component\Working\WorkingSubject\Def\Activity\Process\Process
+        exchange:
+            classes:
+                default: Eki\NRW\Component\Processing\Exchange\Exchange
+        processor:
+            classes:
+        exchanging_type:
+            classes:
+        exchanging:
+            classes:
+        claim_type:
+            classes:
+        claim:
+            classes:
+        plan_type:
+            classes:
+        plan:
+            classes:
+        plan_item_type:
+            classes:
+        plan_item:
+            classes:
+        activity_type:
+            classes:
+        activity:
+            classes:
+        execution_type:
+            classes:
+        execution:
+            classes:
+
+services:
+    eki_nrw.persistence.registry:
+        class: %eki_nrw.persistence.registry.class%

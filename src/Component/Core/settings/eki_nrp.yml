@@ -1,0 +1,45 @@
+eki_nrw:
+    system:
+        a_siteaccess:
+            networking_view:
+                full:
+                    a_rule_set:
+                        template: EkiNrpCoreBundle:full:abc.tưig
+                        controller: ~
+                        match:
+                            Identifier\AgentType: [network, project]
+                graph:
+                    x_rule_set:
+                        template: EkiNrpCoreBundle:graph:graph.tưig
+                        controller: ~
+                        match:
+                            Identifier\AgentType: [network, project, organization]
+            
+            resourcing_view:
+            
+            processing_view:
+                full:
+                    a_rule_set:
+                        template: EkiNrpCoreBundle:full:event.tưig
+                        controller: ~
+                        match:
+                            Identifier\EventType: [event.input]
+                
+            
+            working_view:
+                full:
+                    plan:
+                        template: EkiNrpCoreBundle:full:plan.tưig
+                        controller: ~
+                        match:
+                            Identifier\PlanType: [abc]
+                    plan_item:
+                        template: EkiNrpCoreBundle:full:plan_item.tưig
+                        controller: ~
+                        match:
+                            Identifier\PlanItemType: [def]
+            
+    
+    siteaccess:
+    
+    

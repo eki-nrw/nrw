@@ -1,0 +1,40 @@
+{
+    "name": "eki-nrw/working",
+    "description": "Working Component for Ekipower NRW Project.",
+    "license": "MIT",
+    "homepage": "https://nrw.ekipower.com",
+    "authors": [
+        {
+            "name": "Ekipower Team Group",
+            "website": "http://ekipower.com"
+        },
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "eki-nrw/common": "~0.1",
+        "eki-nrw/mdl-working": "~0.1",
+        "eki-nrw/relating": "~0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+    },
+    "replace": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Eki\\NRW\\Component\\Working\\": "",
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "config": {
+        "process-timeout": 3000
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }    
+}

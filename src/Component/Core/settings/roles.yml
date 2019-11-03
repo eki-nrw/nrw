@@ -1,0 +1,42 @@
+parameters:
+    eki_nrw.base.role.limitation_type.blocking.class: Eki\NRW\Component\Core\Permission\Role\Limitation\BlockingLimitationType
+    eki_nrw.base.role.limitation_type.language.class: Eki\NRW\Component\Core\Permission\Role\Limitation\LanguageLimitationType
+    eki_nrw.base.role.limitation_type.owner.class: Eki\NRW\Component\Core\Permission\Role\Limitation\OwnerLimitationType
+    eki_nrw.base.role.limitation_type.siteaccess.class: Eki\NRW\Component\Core\Permission\Role\Limitation\SiteAccessLimitationType
+    eki_nrw.base.role.limitation_type.user_group.class: Eki\NRW\Component\Core\Permission\Role\Limitation\UserGroupLimitationType
+
+    eki_nrw.base.role.policy_map: {}
+
+services:
+    ## Implemented Limitations
+    eki_nrw.base.role.limitation_type.language:
+        class: "%eki_nrw.base.role.limitation_type.language.class%"
+        arguments: ["@eki_nrw.base.persistence_handler"]
+        tags:
+            - {name: eki_nrw.limitationType, alias: Language}
+
+    eki_nrw.base.role.limitation_type.owner:
+        class: "%eki_nrw.base.role.limitation_type.owner.class%"
+        arguments: ["@eki_nrw.base.persistence_handler"]
+        tags:
+            - {name: eki_nrw.limitationType, alias: Owner}
+
+    eki_nrw.base.role.limitation_type.siteaccess:
+        class: "%eki_nrw.base.role.limitation_type.siteaccess.class%"
+        arguments: ["%ezpublish.siteaccess.list%"]
+        tags:
+            - {name: eki_nrw.limitationType, alias: SiteAccess}
+
+    eki_nrw.base.role.limitation_type.user_group:
+        class: "%eki_nrw.base.role.limitation_type.user_group.class%"
+        arguments: ["@eki_nrw.base.persistence_handler"]
+        tags:
+            - {name: eki_nrw.limitationType, alias: Group}
+
+    eki_nrw.base.role.limitation_type.status:
+        class: "%eki_nrw.base.role.limitation_type.status.class%"
+        tags:
+            - {name: eki_nrw.limitationType, alias: Status}
+
+    ## Non implemented Limitations
+    # Configured to use "blocking" limitation (as they are not implemented) to avoid LimitationNotFoundException

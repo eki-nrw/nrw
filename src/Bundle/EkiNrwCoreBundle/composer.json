@@ -1,0 +1,27 @@
+{
+    "name": "eki-nrw/core-budle",
+    "description": "Core bundle for Eki-NRW",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nguyen Tien Hy",
+            "email": "ngtienhy@gmail.com"
+        },
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+		"eki-nrw/core", "~0.1"
+    },
+    "autoload": {
+        "psr-4": { "Eki\\NRW\\Bundle\\CoreBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
